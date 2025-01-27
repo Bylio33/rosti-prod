@@ -1,0 +1,154 @@
+body {
+    background-color: #f8f9fa;
+}
+
+.navbar {
+    background-color: #e9ecef;
+}
+
+.btn-primary {
+    background-color: #28a745; /* Vert */
+}
+
+.btn-danger {
+    background-color: #dc3545; /* Rouge */
+}
+
+.card {
+    border: 1px solid gold; /* Or */
+}
+/* Style général du formulaire */
+.form-container {
+    width: 300px; /* Largeur du formulaire */
+    margin: 0 auto; /* Centrer le formulaire */
+    padding: 20px; /* Espacement interne */
+    border: 1px solid #ccc; /* Bordure */
+    border-radius: 10px; /* Coins arrondis */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Ombre */
+    background-color: #f9f9f9; /* Couleur de fond */
+}
+
+/* Titre du formulaire */
+.form-title {
+    text-align: center; /* Centrer le texte */
+    font-size: 24px; /* Taille de police */
+    margin-bottom: 20px; /* Espacement en bas */
+}
+
+/* Style des champs de saisie */
+.input-field {
+    width: 100%; /* Largeur complète */
+    padding: 10px; /* Espacement interne */
+    margin: 10px 0; /* Espacement vertical */
+    border: 1px solid #ccc; /* Bordure */
+    border-radius: 5px; /* Coins arrondis */
+    font-size: 16px; /* Taille de police */
+}
+
+/* Style du bouton */
+.btn-submit {
+    width: 100%; /* Largeur complète */
+    padding: 10px; /* Espacement interne */
+    background-color: #4CAF50; /* Couleur de fond */
+    color: white; /* Couleur du texte */
+    border: none; /* Pas de bordure */
+    border-radius: 5px; /* Coins arrondis */
+    font-size: 16px; /* Taille de police */
+    cursor: pointer; /* Curseur en main */
+    transition: background-color 0.3s; /* Transition pour l'effet de survol */
+}
+
+/* Effet de survol du bouton */
+.btn-submit:hover {
+    background-color: #45a049; /* Couleur de fond au survol */
+}
+
+/* Style des liens */
+.link {
+    text-align: center; /* Centrer le texte */
+    display: block; /* Affichage en bloc */
+    margin-top: 10px; /* Espacement en haut */
+    color: #007BFF; /* Couleur du lien */
+    text-decoration: none; /* Pas de soulignement */
+}
+
+.link:hover {
+    text-decoration: underline; /* Soulignement au survol */
+}
+
+/* Styles de base */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* En-tête */
+header {
+    background: #35424a;
+    color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+/* Navigation */
+nav {
+    margin: 20px 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+/* Section principale */
+.main-content {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Pied de page */
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background: #35424a;
+    color: #ffffff;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Boutons */
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #e8491d;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.button:hover {
+    background: #d7371b;
+}
+
+.navbar-brand img {
+    width: 150px; /* Ajustez la largeur selon vos besoins */
+    height: auto; /* Conserve les proportions de l'image */
+}
