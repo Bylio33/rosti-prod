@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>BoostSocial Cameroun</title>
+  <style>
+    body{font-family:Arial,Helvetica,sans-serif;background:#fafafa;margin:0;padding:20px;max-width:600px}
+    h1{text-align:center;color:#333}
+    form{background:#fff;padding:20px;border-radius:10px;box-shadow:0 0 10px rgba(0,0,0,0.1)}
+    label{display:block;margin-top:15px;font-weight:600}
+    input,select{width:100%;padding:10px;margin-top:5px;border:1px solid #ccc;border-radius:5px;font-size:16px}
+    button{background:#ff6b00;color:#fff;border:none;padding:12px 18px;font-size:16px;border-radius:6px;margin-top:20px;cursor:pointer;width:100%}
+    button:hover{background:#e65a00}
+    .price{font-size:18px;margin-top:15px;font-weight:bold;color:#333}
+    footer{text-align:center;margin-top:40px;font-size:13px;color:#666}
+  </style>
+</head>
+<body>
+
+  <h1>BoostSocial Cameroun</h1>
+  <p>Booste ton compte TikTok, Instagram, Facebook ou Snap 💥</p>
+
+  <form id="orderForm">
+    <label>Lien de ton compte ou publication</label>
+    <input type="url" id="link" placeholder="https://..." required>
+
+    <label>Type de service</label>
+    <select id="service">
+      <option value="views">Vues</option>
+      <option value="followers">Abonnés</option>
+      <option value="likes">Likes</option>
+      <option value="comments">Commentaires</option>
+    </select>
+
+    <label>Quantité souhaitée</label>
+    <input type="number" id="quantity" value="1000" min="1" required>
+
+    <p class="price">Prix estimé : <span id="price">0</span> XAF</p>
+
+    <label>Ton numéro WhatsApp</label>
+    <input type="tel" id="whatsapp" placeholder="+237..." required>
+
+    <button type="submit">Commander maintenant</button>
+  </form>
+
+  <footer>
+    © 2025 BoostSocial Cameroun — Service de promotion légitime
+  </footer>
+
+  <script>
+    // === CONFIG PERSONNELLE ===
+    const adminWhatsApp = "237658112846"; // <-- ton numéro WhatsApp (ex : 237658113846)
+    const orangeMoneyNumber = "+237658112846"; // <-- ton numéro Orange Money
+    const rates = {views: 0.2, followers: 1000, likes: 0.5, comments: 500};
+
+    // === LOGIQUE ===
+    const service = document.getElementById('service');
+    const quantity = document.getElementById('quantity');
+    const priceDisplay = document.getElementById('price');
+
+    function updatePrice() {
+      const type = service.value;
+      const qty = Number(quantity.value) || 0;
+      const price = Math.ceil(qty * rates[type]);
+      priceDisplay.textContent = price.toLocaleString('fr-FR');
+    }
+
+    service.addEventListener('change', updatePrice);
+    quantity.addEventListener('input', updatePrice);
+    updatePrice();
+
+    document.getElementById('orderForm').addEventListener('submit', e => {
+      e.preventDefault();
+
+      const link = document.getElementById('link').value.trim();
+      const type = service.value;
+      const qty = Number(quantity.value);
+      const price = Math.ceil(qty * rates[type]);
+      const whatsapp = document.getElementById('whatsapp').value.trim();
+
+      // Génère le message à envoyer sur WhatsApp
+      const message = 
+        `🧾 *Nouvelle commande BoostSocial*\n\n` +
+        `🔗 Lien : ${link}\n` +
+        `📦 Type : ${type}\n` +
+        `📊 Quantité : ${qty}\n` +
+        `💰 Montant : ${price} XAF\n` +
+        `📱 Client WhatsApp : ${whatsapp}\n\n` +
+        `✅ Paiement à effectuer par Orange Money : ${orangeMoneyNumber}\n` +
+        `Merci de m’envoyer la preuve après paiement.`;
+
+      const encodedMsg = encodeURIComponent(message);
+      const waLink = `https://wa.me/${adminWhatsApp}?text=${encodedMsg}`;
+      const adminWhatsApp = "237658112846";
+const orangeMoneyNumber = "+237658112846";
+
+      // Redirection vers WhatsApp
+      window.location.href = waLink;
+    });
+  </script>
+</body>
+</html>
